@@ -1,6 +1,8 @@
 Songsite::Application.routes.draw do
   get "home/index"
 
+  get '/home/download/:file_id'  => 'home#download', :as => 'download'
+
     root :to => "home#index"
 
 
