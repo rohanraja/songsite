@@ -4,7 +4,7 @@ function change_song(e, str)
   var player = $("#jquery_jplayer_1");
 
       player.jPlayer("setMedia", { 
-            mp3: 'http://localhost:3000/home/download/'+str
+            mp3: '/home/download/'+str
           }); 
       
       player.jPlayer("play", 0);
@@ -51,7 +51,7 @@ function searchq(str)
 function next_heading()
 {
   if($('li.active').length > 0)
-    $('li.active').next().next().find('a').click();
+    $('li.active').next().next().next().next().find('a').click();
   else
     $('#head_list li a').eq(0).click();
 
@@ -60,7 +60,7 @@ function next_heading()
 function prev_heading()
 {
   if($('li.active').length > 0)
-    $('li.active').prev().prev().find('a').click();
+    $('li.active').prev().prev().prev().prev().find('a').click();
   else
     $('#head_list li a').eq(0).click();
 

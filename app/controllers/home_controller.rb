@@ -96,6 +96,38 @@ class HomeController < ApplicationController
 
 	    @s_items = SongItem.where(qrystr).take(80)
 
+	   	qrystr = "artist LIKE '%#{words[0]}%'"
+
+	    words.each do |s|
+
+	      if s.length > 1
+
+	        qrystr += " AND artist LIKE '%#{s}%'" 
+	      end
+
+	    end
+
+	    @s_items2 = SongItem.where(qrystr).take(80)
+
+	    @s_items.concat(@s_items2)
+
+	   	qrystr = "album LIKE '%#{words[0]}%'"
+
+	    words.each do |s|
+
+	      if s.length > 1
+
+	        qrystr += " AND album LIKE '%#{s}%'" 
+	      end
+
+	    end
+
+	    @s_items2 = SongItem.where(qrystr).take(80)
+
+	    @s_items.concat(@s_items2)
+
+
+
 	#    logger.info @s_items.count
 
 	  #  logger.info @s_items.to_yaml

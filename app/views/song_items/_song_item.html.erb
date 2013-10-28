@@ -1,2 +1,3 @@
 <li><%= link_to  song_item.title , "#new", :class => 'alink', :onClick => "change_song(this, " + song_item.id.to_s + ")" %></li>
-<li><br></li>
+<li><span class="pull-left"><%= song_item.album %></span><span class="pull-right"><%= song_item.artist %></span></li>
+<li><br></li><li><br></li>
