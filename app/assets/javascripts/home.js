@@ -1,6 +1,17 @@
 function change_song(e, str)
 {
-	$('audio').attr('src', 'http://localhost:3000/home/download/' + str);
+
+  var player = $("#jquery_jplayer_1");
+
+      player.jPlayer("setMedia", { 
+            mp3: 'http://localhost:3000/home/download/'+str
+          }); 
+      
+      player.jPlayer("play", 0);
+    
+
+
+	//$('audio').attr('src', 'http://localhost:3000/home/download/' + str);
 
   $("#head_list li").each(function(i,val){
     $(val).removeClass('active');
@@ -54,3 +65,34 @@ function prev_heading()
     $('#head_list li a').eq(0).click();
 
 }
+
+
+
+$(document).ready(function(){
+
+
+$("#jquery_jplayer_1").jPlayer({
+
+
+    ready: function () {
+      $(this).jPlayer("setMedia", {
+        mp3:""
+      });
+    },
+    swfPath: "js",
+    supplied: "mp3",
+    wmode: "window",
+    smoothPlayBar: true,
+    keyEnabled: true
+  });  
+
+
+});
+
+       
+
+
+
+
+
+

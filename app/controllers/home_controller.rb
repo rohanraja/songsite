@@ -7,9 +7,25 @@ class HomeController < ApplicationController
 
   	sitem = SongItem.find(params[:file_id])
 
- 	@filename = sitem.path
+ 	filename = sitem.path
 
-	send_file(@filename, :filename => "stream.mp3", :type=>"audio/mp3")
+ 
+
+	#send_file(@filename, :filename => "stream.mp3", :type=>"audio/mp3", :disposition => 'inline', :stream => true)
+
+
+	 size = File.size(filename)
+    bytes = Rack::Utils.byte_ranges(request.headers, size)[0]
+    offset = bytes.begin
+    length = bytes.end  - bytes.begin
+
+    response.header["Accept-Ranges"]=  "bytes"
+    response.header["Content-Range"] = "bytes #{bytes.begin}-#{bytes.end}/#{size}"
+
+    send_data IO.binread(filename,length, offset), :type => "video/mp4", :stream => true,  :disposition => 'inline',
+              :file_name => 'stream.mp3'
+
+
 
   end
 
@@ -19,7 +35,7 @@ class HomeController < ApplicationController
   	require 'find'
   	require "mp3info"
  
-	Find.find("/Volumes/Mlion/Users/") do |f|
+	Find.find("/Volumes/Rohan\'s\ Third\ HDD/") do |f|
    # print file and path to screen if filename ends in ".mp3"
    		#logger.info f if f.match(/\.mp3\Z/)
    		begin
@@ -78,17 +94,17 @@ class HomeController < ApplicationController
 
 	    end
 
-	    @s_items = SongItem.where(qrystr).take(10)
+	    @s_items = SongItem.where(qrystr).take(80)
 
-	    logger.info @s_items.count
+	#    logger.info @s_items.count
 
-	    logger.info @s_items.to_yaml
+	  #  logger.info @s_items.to_yaml
 
 	  	@q = qry
 
 	  	render @s_items
 
-	  	
+
 
 	  
 

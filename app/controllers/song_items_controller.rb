@@ -4,7 +4,7 @@ class SongItemsController < ApplicationController
   # GET /song_items
   # GET /song_items.json
   def index
-    @song_items = SongItem.order("id DESC").all
+    @song_items = SongItem.order("id DESC").limit(100)
   end
 
   # GET /song_items/1
