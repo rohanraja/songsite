@@ -8,6 +8,8 @@ gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) support
 gem "twitter-bootstrap-rails"
 
 
+gem "ruby-mp3info"
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 

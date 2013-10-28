@@ -1,5 +1,45 @@
-<h1>Home#index</h1>
+<div class="row-fluid">
+ <div class="span4">
+    <div class="well sidebar-nav">
+      <input onKeyUp = "searchq(this.value)" type="text" class="form-control" placeholder="Search">
+      <hr>
+      <ul class="nav nav-list" id="head_list">
 
-<%= audio_tag "didi.mp3" , controls: true %>
+       
+      </ul>
+
+
+    </div><!--/.well -->
+  
+  </div><!--/span-->
+
+
+
+  <div class="span8" >
+
+
+     <a class="btn on_left" href="#prev" onclick="prev_heading()"><i class="icon-arrow-left icon-2x"></i></a>
+
+     <a class="btn pull-right on_right" href="#next" onclick="next_heading()"><i class="icon-arrow-right icon-2x"></i></a>
+
+    <%= audio_tag "" , controls: true, autoplay: true %>
+   
+    
+  </div>
+
+</div><!--/row-->
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+
+
+</script>
 
 

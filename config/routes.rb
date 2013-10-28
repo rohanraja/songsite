@@ -1,9 +1,15 @@
 Songsite::Application.routes.draw do
+  resources :song_items
+
   get "home/index"
+
+  get "home/crawl", :as => 'crawl'
 
   get '/home/download/:file_id'  => 'home#download', :as => 'download'
 
-    root :to => "home#index"
+  get '/home/search/:qry' => 'home#searchq', :as => 'searchq'
+
+  root :to => "home#index"
 
 
   # The priority is based upon order of creation: first created -> highest priority.

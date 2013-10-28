@@ -1,3 +1,82 @@
-// Place all the styles related to the Home controller here.
+// Place all the styles related to the List controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+li.active
+{
+	background-color: blue;
+}
+
+.alink
+{
+	border : 1px solid;
+	box-shadow: 6px 6px 5px #888888;
+}
+
+.well
+{
+	text-align : center;
+}
+
+.span8
+{
+	padding: 3px;
+}
+
+.span8 table
+{
+	background-color: white ;
+	z-index: 100;
+//	box-shadow: 10px 10px 10px 10px #888888;
+	-moz-box-shadow: -4px 12px 48px #000000;
+-webkit-box-shadow: -4px 12px 48px #000000;
+box-shadow: -4px 12px 48px #000000;
+}
+
+.span8 table {
+-webkit-animation: cssAnimation 0.5s 1 ease;
+-moz-animation: cssAnimation 0.5s 1 ease;
+-o-animation: cssAnimation 0.5s 1 ease;
+}
+@-webkit-keyframes cssAnimation {
+from { -webkit-transform: rotate(0deg) scale(0.698) skew(1deg) translate(-188px); }
+to { -webkit-transform: rotate(0deg) scale(1.001) skew(1deg) translate(2px); }
+}
+@-moz-keyframes cssAnimation {
+from { -moz-transform: rotate(0deg) scale(0.698) skew(1deg) translate(-188px); }
+to { -moz-transform: rotate(0deg) scale(1.001) skew(1deg) translate(2px); }
+}
+@-o-keyframes cssAnimation {
+from { -o-transform: rotate(0deg) scale(0.698) skew(1deg) translate(-188px); }
+to { -o-transform: rotate(0deg) scale(1.001) skew(1deg) translate(2px); }
+}
+
+
+#desc_cont
+{
+	margin-top: 20px;
+}
+
+.on_left
+{
+	margin-left: 200px;
+}
+
+.on_right
+{
+	margin-right: 230px;
+}
+
+.row-fluid
+{
+	height: 600px;
+	margin-bottom: 15px;
+}
+.sidebar-nav ul
+{
+
+	//height : 100px;
+	padding-bottom: 15px;
+	margin-bottom: 15px;
+	overflow : auto;
+}
